@@ -10,8 +10,8 @@
         linear-gradient(135deg, #777777 50%, transparent 50%),
         radial-gradient(#dddddd 70%, transparent 72%);
     background-position:
-        calc(100% - 2em) 50%,
-        calc(100% - 2em + 5px) 50%,
+        calc(100% - 2em + 1px) 50%,
+        calc(100% - 2em + 6px) 50%,
         calc(100% - 1em - 3px) 50%;
     background-size:
         5px 5px,
@@ -26,7 +26,7 @@
         linear-gradient(135deg, transparent 50%, white 50%),
         radial-gradient(#777777 50%, transparent 72%);
     background-position:
-        calc(100% - 2em + 5px) calc(50% - 1px),
-        calc(100% - 2em) calc(50% - 1px),
+        calc(100% - 2em + 6px) calc(50% - 1px),
+        calc(100% - 2em + 1px) calc(50% - 1px),
         calc(100% - 1em - 3px) 50%;
 }
