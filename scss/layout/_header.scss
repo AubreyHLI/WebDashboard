@@ -1,0 +1,47 @@
+/* ============================================= */
+/*                   Header                      */
+/* ============================================= */
+
+.grid-header {
+    grid-area: header;
+    padding: 0 1em;
+    background-color: $color-primary;
+    color: $color-white;
+    @include flexy($dire: row, $justi: space-between);
+}
+
+.account {
+    width: 200px;
+    @include flexy($dire: row, $justi: end);
+    @include meqe($breakpoint-s) { 
+        justify-content: space-evenly; 
+    }
+    
+    &-info {
+        display: none;
+        @include meqe($breakpoint-s) { 
+            display: block;
+        }
+    }
+
+    &-infoImg {
+        border-left: 2px solid rgba(255,255,255,0.1);
+        padding-left: 16px;
+    }
+}
+
+
+.bell {
+    height: 44px;
+    padding-right: 16px;
+
+    &-notifications {
+        @include layout($dis: inline-block, $pos: absolute);
+        font-weight: 500;
+        border-radius: 4px;
+        background: #ed5a5a;
+        font-size: 14px;
+        padding: 0 3px;
+        line-height: 16px;
+    }
+}

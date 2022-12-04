@@ -1,0 +1,56 @@
+// ============================================= 
+//                  Mixins                       
+// ============================================= 
+
+// Flexbox
+@mixin flexy($dis: flex, $dire: null, $justi: null, $align: center) {
+	display: $dis;
+	flex-direction: $dire;
+	justify-content: $justi;
+    align-items: $align;
+    @content;
+}
+
+// Grid
+@mixin gridy($dis: grid, $gtcol: null, $gtrow: null, $gap: null) {
+    display: $dis;
+    grid-template-columns: $gtcol;
+    grid-template-rows: $gtrow;
+    gap: $gap;
+    @content;
+}
+
+// Layout
+@mixin layout($pos: null, $dis: null, $h: null, $w: null, $t: null, $l: null) {
+    position: $pos;
+    display: $dis;
+    height: $h;
+    width: $w;
+    top: $t;
+    left: $l;
+}
+
+@mixin shape($round: false, $w:null, $h: null, $rad:null, $bor: null) {
+    border-radius: $rad;
+    border: $bor;
+    @if $round {
+        width: $rad;
+        height: $rad;
+    } 
+    @else {
+        width: $w;
+        height: $h;
+    }
+}
+
+// Media Queries
+@mixin meqe($bpvalue) {
+	@if $bpvalue == null {
+		@error '`#{$bpvalue}` is not a valid breakpoint value.';
+	}
+	@else {
+		@media (min-width: $bpvalue) {
+			@content; //允许media query更改rule properties
+		}
+	}
+}

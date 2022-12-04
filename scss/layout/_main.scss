@@ -1,0 +1,161 @@
+/* ============================================= */
+/*                   Main                        */
+/* ============================================= */
+
+.main-header {
+    @include flexy($dire: row, $align: null) {
+        height: 50px;
+    }
+    &-container {
+        padding: 0 0 10px 16px;
+        border: none;
+    }
+    & h2 {
+        padding: 12px 16px 0 0;
+    }
+}
+
+.search {
+    flex-grow: 1;
+    background-color: $color-bg;
+    border-bottom: $brdr-primary;;
+    border-left: $brdr-primary;;
+    border-radius:  0 0 0 10px ;
+    & input {
+        @include layout($dis: block, $w: 85%, $h: 2.25em);
+        margin: 10px 2em auto auto;
+        padding: 10px;
+        max-width: 20em;
+    }
+}
+
+.traffic {
+    &-header {
+        height: 60px;
+        @include flexy($dire: column, $justi: space-between, $align: null);
+        @include meqe($breakpoint-m) {
+            @include flexy($dis: null, $dire: row, $justi: space-between);
+            height: 40px;
+        }
+    }
+    &-nav {
+        @include flexy($dire: row, $justi: space-between);
+        width: 95%;
+        max-width: 400px;
+        padding-right: 2em;
+    }
+    &-nav li {
+        border-radius: 16px;
+        padding: .4em .8em;
+        cursor: default;
+    
+        &.active {
+            background-color: $color-info;
+            color: $color-white;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+        &.active:hover {
+            transform: scale(1);
+        }
+    }
+}
+
+.social {
+    &-container {
+        @include flexy($dire: column, $align: null);
+        @include meqe($breakpoint-m) {
+            flex-direction: row;
+        }
+    }
+    &-item {
+        flex-grow: 1;
+        background-color: #f6f7f7;
+        margin-top: 20px;
+        padding: 20px;
+        @include shape($rad: 10px, $bor: $brdr-primary);
+        @include meqe($breakpoint-m) {
+            margin-right: 10px;
+
+            &:nth-last-child(1) {
+                margin-right: 0;
+            }
+        }
+    }
+    &-icon {
+        @include shape($round: true, $rad: 80px);
+        background-color: $btn-primary;
+        display: inline-block;
+    }
+    &-text {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        padding-top: 4px;
+        
+        & p:nth-child(1) {
+            color: $btn-primary;
+        }
+        & p:nth-child(2) {
+           font-size: 3em;
+           color: $color-font-secondary;
+        }
+    }
+}
+
+.member {
+    &-item {
+        padding: 20px 0;
+        border-bottom: $brdr-primary;;
+        text-align: center;
+        @include flexy($dire: column){
+            gap: 10px;
+        };
+        @include meqe($breakpoint-m) {
+            flex-direction: row;
+            text-align: start;
+            gap: 20px;
+            .date {
+                margin-left: auto;
+                align-self: center;
+            }
+        }
+        &:nth-child(1) {
+            margin-top: 10px;
+        }
+        &:nth-last-child(1) {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+    &-text {
+        align-self: center;
+        & a {
+            color: $btn-primary;
+        }
+    }
+}
+
+.swift-btn {
+    max-width: 400px;
+    @include flexy($dire: row, $justi: space-between);
+    & > * {
+        width: max-content;
+    }
+}
+
+
+.setting {
+    min-height: 100%;
+    @include gridy($gtrow: auto repeat(3,1fr) auto, $gap: 10px);
+    &-btns {
+        @include flexy($dire: row) {
+            gap: 20px;
+        }
+        & > * {
+            flex-grow: 0.5;
+        }
+    }
+}
+

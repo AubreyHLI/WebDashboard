@@ -1,0 +1,64 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.grid {
+    &-container {
+        @include gridy($gtcol: 1fr, $gtrow: 70px 50px auto);
+        grid-template-areas: 
+            "header"
+            "navigation"
+            "main";
+    }
+
+    &-main {
+        grid-area: main;
+        @include gridy;
+        & > * {
+            min-width: 0px;
+            border-bottom: $brdr-primary;
+            padding: 20px;
+        }
+    }
+    
+    &-item {
+        border-right: $brdr-primary;
+    }
+
+    @include meqe($breakpoint-m) {
+        &-container {
+            @include gridy($dis: null, $gtcol: $nav-width 1fr, $gtrow: 70px auto);
+            grid-template-areas: 
+                "header header"
+                "navigation main";
+        }
+
+        &-main {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+}
+
+.row {
+    @include meqe($breakpoint-m) {
+        &-full,
+        &-half-l,
+        &-half-r {
+            grid-column: 1 / span 2;
+        }
+    }
+    @include meqe($breakpoint-l) {
+        &-half-l {
+            grid-column: 1 / span 1;
+        }
+        &-half-r {
+            grid-column: 2 / span 1;
+        }
+    }
+}
+
+
+
+
+

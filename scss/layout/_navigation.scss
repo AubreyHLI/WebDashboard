@@ -1,0 +1,22 @@
+/* ============================================= */
+/*               Navigation                      */
+/* ============================================= */
+
+.grid-nav {
+    padding: 0 2em;
+    grid-area: navigation;
+    background-color: #43456d;
+    @include flexy($dire: row, $justi: space-evenly);
+    
+    @include meqe($breakpoint-m) {
+        padding: 1.5em 0;
+        @include flexy($dis: null, $dire: column, $justi: flex-start, $align: null){
+            gap: 1.5em;
+        }
+    }
+
+    & a:hover {
+        transform: scale(1.1);
+    }
+
+}

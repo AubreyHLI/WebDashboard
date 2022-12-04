@@ -1,0 +1,26 @@
+/* ============================================= */
+/*                Alert                          */
+/* ============================================= */
+
+.alert {
+    display: none;
+    margin: 10px 16px 0 0;
+    @include meqe($breakpoint-m){
+        display: block;
+    }
+    &-banner {
+        @include flexy($dire: row, $justi: space-between);
+        @include shape($h: 45px, $rad: 10px);
+        padding: 0 1em;
+        background-color: $color-info;
+        color: $color-white;
+    }
+    &-close-btn {
+        margin-right: 10px;
+        transition: transform .1s ease;
+        cursor: default;
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}

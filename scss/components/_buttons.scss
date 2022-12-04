@@ -1,0 +1,18 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+
+button,
+input[type='button'] {
+    color: $color-white;
+}
+
+.btn {
+    &-primary {
+        background-color: $btn-primary;
+    }
+    
+    &-disabled {
+        background-color: $btn-cancel;
+    }
+}

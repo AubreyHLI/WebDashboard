@@ -1,0 +1,58 @@
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4 {
+  	font-family: $font-family-secondary;
+}
+
+ul {
+  	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	transition: all .2s ease;
+	cursor: pointer;
+}
+
+input,
+button,
+select,
+textarea {
+	@include shape($w:100%, $rad: 5px, $bor:$brdr-primary);
+    margin-top: 20px;
+    line-height: 1.5;
+    padding: 10px;
+} 
+textarea {
+    height: 150px;
+    min-height: 0;
+    resize: none;
+}
+
+svg {
+	fill: $color-white;
+}
+
+
+/* ============================================= */
+/*              Typography                       */
+/* ============================================= */
+body {
+	color: $color-font-primary;
+	font-family: $font-family-primary;
+	width: 100vw;
+	min-width: $min-width;
+	max-width: $max-width;
+	padding: 0;
+	margin: 0 auto;
+}
+
+

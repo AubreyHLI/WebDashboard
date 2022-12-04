@@ -1,0 +1,11 @@
+// ============================================= 
+//                Functions                      
+// ============================================= 
+
+@function getMainWidth($viewWidth, $mainMargin, $navWidth) {
+    @return calc($viewWidth - $mainMargin - $navWidth);
+}
+
+@function setSelectBtnPosition() {
+
+}

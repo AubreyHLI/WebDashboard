@@ -1,0 +1,28 @@
+/* ============================================= */
+/*              Images                           */
+/* ============================================= */
+
+.img {
+    &-account {
+        @include shape($round: true, $rad: 44px);
+    }
+
+    &-bell {
+        @include layout($pos: relative, $w: 28px, $t: 5px);
+    }
+
+    &-nav {
+        filter: invert(1); /* svg 黑反转为白*/
+        width: 32px;
+        margin: auto;
+    }
+
+    &-social {
+        width: 50%;
+        transform: translate3d(50%,50%,0);
+    }
+
+    &-profile {
+        @include shape($round: true, $rad: 100px, $bor: $brdr-primary);
+    }
+}

@@ -1,0 +1,66 @@
+/* ============================================= */
+/*              Toggle Switch                    */
+/* ============================================= */
+  
+.toggle{
+    &-container {  /* 包裹checkbox 和 label的 div*/
+        @include layout($pos: relative, $dis: inline-block, $h: max-content, $w: 100%);
+    }
+
+    &-cb {   /* checkbox */
+        @include layout($pos: absolute, $h: 40px, $w: 40px, $t: 15%, $l: .5em);
+        opacity: 0;
+    }
+
+    &-off {
+        @include layout($pos: absolute, $t: .65em, $l: 3em);
+        color: $color-font-secondary;
+        transform: scale(1);
+    }
+
+    &-on {
+        @include layout($pos: absolute, $t: .65em, $l: 1em);
+        color: $color-white;
+        transform: scale(0);
+    } 
+}
+
+.toggle-item { /* label，挖个洞*/
+    @include layout($pos: relative, $dis: inline-block, $t: 15%, $l: .5em);
+    @include shape($h: 2.5em, $w: 6em, $rad: 50px, $bor: $brdr-primary); /* 变成椭圆形 */
+    transition: all .3s ease;
+    transform-origin: 20% center;
+    background: $color-white;
+    cursor: pointer;
+
+    &:before { /*画个球*/
+        content: '';
+        @include layout($pos: absolute, $dis: block, $t: .3em, $l: .4em);
+        @include shape($round: true, $rad: 1.6em, $bor: $brdr-toggle);
+        background: $btn-primary;
+        transition: .3s ease;
+    }
+
+    & > span {
+        transition:.15s ease-in; 
+    }
+}
+
+
+.toggle-cb:checked + label {  /* 选中checkbox，洞变绿色，小球右移67px */
+    background: $btn-primary;
+    
+    &:before {
+        left: 60px;
+        background: $color-white;
+        border-color: $color-secondary;
+    }
+    & .toggle{ 
+        &-off {
+            transform: scale(0);
+        }
+        &-on {
+            transform: scale(1);
+        }   
+    }   
+}
