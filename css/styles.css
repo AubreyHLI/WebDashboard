@@ -221,7 +221,13 @@ input[type='button'] {
 /* ============================================= */
 .chart {
   width: 100%;
-  height: 400px;
+  height: 300px;
+}
+
+@media (min-width: 450px) {
+  .chart {
+    height: 400px;
+  }
 }
 
 /* ============================================= */
@@ -326,7 +332,6 @@ input[type='button'] {
 }
 
 .account {
-  width: 200px;
   display: flex;
   flex-direction: row;
   justify-content: end;

@@ -3,5 +3,8 @@
 /* ============================================= */
 
 .chart {
-    @include shape($w:100%, $h: 400px);
+    @include shape($w:100%, $h: 300px);
+    @include meqe($breakpoint-s) {
+        height: 400px;
+    }
 }
